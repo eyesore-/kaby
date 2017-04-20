@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions/index'
+import { extractCategory, extractText } from '../utils/helpers'
 
 let AddTodo = ({ dispatch }) => {
   let input
@@ -10,7 +11,8 @@ let AddTodo = ({ dispatch }) => {
       e.preventDefault()
       if (!input.value.trim()) return
       newTodo.id = Date.now()
-      newTodo.text = input.value
+      newTodo.category = extractCategory(input.value)
+      newTodo.text = extractText(input.value)
       dispatch(addTodo(newTodo))
       input.value = ''
     }}>

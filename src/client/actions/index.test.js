@@ -4,12 +4,12 @@ it('creates \'ADD_TODO\' action', () => {
   const id = Date.now()
   const action = {
     type: 'ADD_TODO',
-    id: id,
+    id,
     text: 'test TEst TEst'
   }
   const input = {
     text: 'test TEst TEst',
-    id: id
+    id
   }
   expect(addTodo(input)).toEqual(action)
 })

@@ -7,6 +7,13 @@ it('Extract category from task input', () => {
   expect(extracted).toBe(correct)
 })
 
+it('Allow special characters in category', () => {
+  let input = '+cate\'gory? some shit to do'
+  let correct = 'cate\'gory?'
+  let extracted = extractCategory(input)
+  expect(extracted).toBe(correct)
+})
+
 it('Return null when no category is provided', () => {
   let input = 'some other shit to do'
   let extracted = extractCategory(input)

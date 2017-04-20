@@ -1,7 +1,8 @@
-export const addTodo = ({ text, id }) => {
+export const addTodo = ({ text, id, category }) => {
   return {
     type: 'ADD_TODO',
-    id: id,
+    id,
+    category,
     text
   }
 }

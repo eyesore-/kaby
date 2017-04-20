@@ -2,7 +2,7 @@
 
 // Extract category from input
 export const extractCategory = input => {
-  const regexPattern = /^\+(\w+)/
+  const regexPattern = /^\+(.\S+)/
   const matches = input.match(regexPattern)
   return matches ? matches[1] : matches
 }
