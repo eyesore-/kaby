@@ -1,20 +1,21 @@
 import { connect } from 'react-redux'
-import { setFilter } from '../actions/index'
+import { setFilter, setCategory } from '../actions/index'
 import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.filter === state.visibilityFilter
+  active: ownProps.category === state.categoryFilter
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClick: () => {
     dispatch(setFilter(ownProps.filter))
+    dispatch(setCategory(ownProps.category))
   }
 })
 
-const FilterLink = connect(
+const CategoryLink = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Link)
 
-export default FilterLink
+export default CategoryLink

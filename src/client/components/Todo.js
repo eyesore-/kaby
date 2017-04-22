@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import FilterLink from '../containers/FilterLink'
+import CategoryLink from '../containers/CategoryLink'
 
 const Todo = ({ onClick, completed, category, text, deleteClick }) => (
   <div>
-    <FilterLink filter='SHOW_CATEGORY'>
+    <CategoryLink
+      filter='SHOW_CATEGORY'
+      category={category}
+      >
       {category}
-    </FilterLink>
+    </CategoryLink>
+
     <span
       onClick={onClick}
       style={{color: completed ? 'pink' : 'black'}}

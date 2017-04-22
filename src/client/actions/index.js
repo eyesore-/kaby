@@ -1,3 +1,5 @@
+// Actions for individual todos
+
 export const addTodo = ({ text, id, category }) => ({
   type: 'ADD_TODO',
   id,
@@ -10,12 +12,19 @@ export const toggleTodo = id => ({
   id
 })
 
-export const setFilter = filter => ({
-  type: 'SET_FILTER',
-  filter
-})
-
 export const deleteTodo = id => ({
   type: 'DELETE_TODO',
   id
+})
+
+// Actions for filtering
+
+export const setCategory = category => ({
+  type: 'SET_CATEGORY',
+  category
+})
+
+export const setFilter = filter => ({
+  type: 'SET_FILTER',
+  filter
 })
