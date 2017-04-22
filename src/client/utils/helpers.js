@@ -4,7 +4,7 @@
 export const extractCategory = input => {
   const regexPattern = /^\+(.\S+)/
   const matches = input.match(regexPattern)
-  return matches ? matches[1] : matches
+  return matches ? matches[1] : ''
 }
 
 // Extract text from input
