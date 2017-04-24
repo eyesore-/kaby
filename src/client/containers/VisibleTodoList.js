@@ -2,8 +2,8 @@ import { connect } from 'react-redux'
 import { toggleTodo, deleteTodo } from '../actions'
 import TodoList from '../components/TodoList'
 
-const getVisibleTodos = ({todos, visibilityFilter, categoryFilter}) => {
-  switch (visibilityFilter) {
+const getVisibleTodos = ({todos, visibilityFilter}) => {
+  switch (visibilityFilter.filter) {
     case 'SHOW_ALL':
       return todos
     case 'SHOW_COMPLETED':
@@ -11,7 +11,7 @@ const getVisibleTodos = ({todos, visibilityFilter, categoryFilter}) => {
     case 'SHOW_ACTIVE':
       return todos.filter(t => !t.completed)
     case 'SHOW_CATEGORY':
-      return todos.filter(t => t.category === categoryFilter)
+      return todos.filter(t => t.category === visibilityFilter.category)
     default:
       return todos
   }

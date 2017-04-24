@@ -19,12 +19,8 @@ export const deleteTodo = id => ({
 
 // Actions for filtering
 
-export const setCategory = category => ({
-  type: 'SET_CATEGORY',
-  category
-})
-
-export const setFilter = filter => ({
+export const setFilter = ({ filter, category }) => ({
   type: 'SET_FILTER',
-  filter
+  filter,
+  category
 })
