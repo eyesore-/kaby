@@ -1,3 +1,5 @@
+import data from '../../../seed'
+
 const todo = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -17,7 +19,7 @@ const todo = (state = {}, action) => {
   }
 }
 
-const todos = (state = [], action) => {
+const todos = (state = data, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [

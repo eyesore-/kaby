@@ -8,7 +8,7 @@ const Todo = ({ onClick, completed, category, text, deleteClick }) => (
       filter='SHOW_CATEGORY'
       category={category}
       >
-      {category}
+      {category || ''}
     </FilterLink>
 
     <span
@@ -16,7 +16,7 @@ const Todo = ({ onClick, completed, category, text, deleteClick }) => (
       style={{color: completed ? 'pink' : 'black'}}
     >{text}</span>
     <span onClick={deleteClick}
-    >X</span>
+    >&#10005;</span>
   </div>
 )
 
