@@ -1,11 +1,11 @@
 import React from 'react'
-import FilterNav from './FilterNav'
+import Nav from '../containers/Nav'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
   <div>
-    <FilterNav />
+    <Nav />
     <AddTodo />
     <VisibleTodoList />
   </div>
