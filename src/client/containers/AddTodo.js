@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions/index'
+import { addTodo, addCategory } from '../actions/index'
 import { extractCategory, extractText } from '../utils/helpers'
 
 let AddTodo = ({ dispatch }) => {
@@ -14,6 +14,7 @@ let AddTodo = ({ dispatch }) => {
       newTodo.category = extractCategory(input.value)
       newTodo.text = extractText(input.value)
       dispatch(addTodo(newTodo))
+      if (newTodo.category) dispatch(addCategory(newTodo.category))
       input.value = ''
     }}>
       <input ref={node => {
