@@ -24,3 +24,10 @@ export const setFilter = ({ filter, category }) => ({
   filter,
   category
 })
+
+// Action to add categories
+
+export const addCategory = category => ({
+  type: 'ADD_CATEGORY',
+  category
+})
