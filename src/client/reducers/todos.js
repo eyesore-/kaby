@@ -1,4 +1,4 @@
-import data from '../../../seed'
+import data from '../../seed'
 
 const todo = (state = {}, action) => {
   switch (action.type) {
