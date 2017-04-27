@@ -10,7 +10,6 @@ let AddTodo = ({ dispatch }) => {
     <form onSubmit={e => {
       e.preventDefault()
       if (!input.value.trim()) return
-      newTodo.id = Date.now()
       newTodo.category = extractCategory(input.value)
       newTodo.text = extractText(input.value)
       dispatch(addTodo(newTodo))

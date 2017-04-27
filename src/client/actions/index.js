@@ -1,8 +1,8 @@
 // Actions for individual todos
 
-export const addTodo = ({ text, id, category }) => ({
+export const addTodo = ({ text, category }) => ({
   type: 'ADD_TODO',
-  id,
+  id: Date.now(),
   category,
   text
 })
