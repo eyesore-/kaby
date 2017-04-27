@@ -1,9 +1,14 @@
+import colors from '../utils/colors'
+
 // Actions for individual todos
 
 export const addTodo = ({ text, category }) => ({
   type: 'ADD_TODO',
   id: Date.now(),
-  category,
+  category: {
+    value: category,
+    color: colors[Math.floor(Math.random() * colors.length)]
+  },
   text
 })
 

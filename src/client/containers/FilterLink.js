@@ -3,7 +3,8 @@ import { setFilter } from '../actions/index'
 import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.filter === state.visibilityFilter.filter
+  active: ownProps.filter === state.visibilityFilter.filter,
+  color: ownProps.color
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -11,8 +11,8 @@ const getVisibleTodos = ({todos, visibilityFilter}) => {
     case 'SHOW_ACTIVE':
       return todos.filter(t => !t.completed)
     case 'SHOW_CATEGORY':
-      console.log('triggered SHOW_CATEGORY with category', visibilityFilter.category)
-      return todos.filter(t => t.category === visibilityFilter.category)
+      console.log('triggered SHOW_CATEGORY with category', visibilityFilter.category, 'Todos', todos)
+      return todos.filter(t => t.category.value === visibilityFilter.category)
     default:
       return todos
   }

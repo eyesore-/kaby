@@ -6,9 +6,10 @@ const Todo = ({ onClick, completed, category, text, deleteClick }) => (
   <div>
     <FilterLink
       filter='SHOW_CATEGORY'
-      category={category}
+      category={category.value}
+      color={category.color}
       >
-      {category || ''}
+      {category.value}
     </FilterLink>
 
     <span
@@ -22,7 +23,10 @@ const Todo = ({ onClick, completed, category, text, deleteClick }) => (
 
 Todo.propTypes = {
   text: PropTypes.string.isRequired,
-  category: PropTypes.string,
+  category: PropTypes.shape({
+    value: PropTypes.string,
+    color: PropTypes.string
+  }),
   completed: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
   deleteClick: PropTypes.func.isRequired
